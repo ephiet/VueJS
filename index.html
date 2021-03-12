@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritores novatos</title>
+</head>
+<body>
+    <div id="app">
+        <h2>Historias</h2>
+        <br>
+        <h4>Las historias de Alex</h4>
+        <ul v-for="historia in historiasAlex">
+            <li>{{historia.texto}}</li>
+        </ul>
+        <br>
+        <h4>Las historias de Juan</h4>
+        <ul v-for="historia in historiasJuan">
+            <li>{{historia.texto}}</li>
+        </ul>
+        <h4>Búsqueda</h4>
+        <input v-model="input" type="search" placeholder="ingrese palabra para búsqueda">
+        <span id="search-addon"></span>
+        <h6>Resultados de la búsqueda:</h6>
+        <ul v-for="historia in busqueda" v-show="input">
+            <li>{{historia.texto}}</li>
+        </ul>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="/vueCDN/script.js"></script>
+</body>
+</html>
